@@ -209,5 +209,3 @@ __marimo__/
 # Project-specific ignores
 markdown-files/*
 !markdown-files/.gitkeep
-mardown-files/*  # Common typo fallback
-!mardown-files/.gitkeep
