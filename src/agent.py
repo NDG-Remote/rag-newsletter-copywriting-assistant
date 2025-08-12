@@ -14,21 +14,7 @@ load_dotenv()
 
 # --- Paths configuration ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-
-def _resolve_markdown_root() -> str:
-    candidates = [
-        os.path.join(PROJECT_ROOT, "markdown-files"),
-        os.path.join(PROJECT_ROOT, "mardown-files"),  # common typo fallback
-    ]
-    for candidate in candidates:
-        if os.path.isdir(candidate):
-            return candidate
-    # default to the first, even if it doesn't exist, so errors clearly reference expected path
-    return candidates[0]
-
-
-MARKDOWN_ROOT = _resolve_markdown_root()
+MARKDOWN_ROOT = os.path.join(PROJECT_ROOT, "markdown-files")
 EDITORIAL_GUIDELINES_PATH = os.path.join(MARKDOWN_ROOT, "Editorial Guidelines.md")
 BRIEFING_PATH = os.path.join(MARKDOWN_ROOT, "Briefing.md")
 PAST_NEWSLETTERS_DIR = os.path.join(MARKDOWN_ROOT, "past_newsletter")
